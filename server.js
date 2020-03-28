@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === "production") {
 // api route
 app.use(routes)
 
-// mongo
+// mongo connection - update with heroku stuff when the time arrives
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", 
 { useNewUrlParser: true });
 
