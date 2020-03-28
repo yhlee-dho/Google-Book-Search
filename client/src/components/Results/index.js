@@ -26,7 +26,8 @@ class Results extends Component {
     render() {
         return (
             <div>
-                {!this.props.books.length ? (
+                {!this.props.books.length ? 
+                (
                     <h1 className="text-center">No Results to Display</h1>
                 ) : (
                     <div>
@@ -44,10 +45,11 @@ class Results extends Component {
                                                 <a 
                                                     className="btn badge-pill btn-outline-dark mt-3" 
                                                     href={res.link} 
-                                                    target="_blank">View</a>
+                                                    target="_blank"
+                                                    rel="noopener noreferrer">View</a>
                                                 <button onClick={() => this.handleSave(res)} 
                                                         className="btn badge-pill btn-outline-warning mt-3 ml-3">
-                                                    {this.state.savedBooks.map(book => book._id).includes(res._id) ? "Delete" : "Save"}
+                                                    {this.state.savedBooks.map(book => book._id).includes(res._id) ? "unknown" : "Save"}
                                                 </button>
                                             </div>
                                         </div>
@@ -56,7 +58,7 @@ class Results extends Component {
                             </div>
                         ))}
                     </div>
-                )}
+                    )}
             </div>
         )
     }

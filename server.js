@@ -18,8 +18,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes)
 
 // mongo connection - update with heroku stuff when the time arrives
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", 
-{ useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 
 app.listen(PORT, () => {
     console.log(`API server is now online on port ${PORT} !!!`);
