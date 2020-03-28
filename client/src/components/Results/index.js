@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 
-class Results extends Components {
+class Results extends Component {
     state = {
         savedBooks: []
     }
@@ -15,7 +15,7 @@ class Results extends Components {
     handleSave = book => {
         if(this.state.savedBooks.map(book => book._id).includes(book._id)) {
             API.deleteBook(book._id)
-                .then(deleteBook => this.setState({ savedBooks: this.state.savedBooks.filter(book => book._id !== deletedBook._id) }))
+                .then(deletedBook => this.setState({ savedBooks: this.state.savedBooks.filter(book => book._id !== deletedBook._id) }))
         } else {
             API.saveBook(book)
                 .then(savedBook => this.setState({ savedBooks: this.state.savedBooks.concat([savedBook])}))
