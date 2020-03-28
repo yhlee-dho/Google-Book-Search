@@ -1,6 +1,6 @@
 import React from "react";
 import Form from "../components/Form";
-import Results from "../compoenents/Results";
+import Results from "../components/Results";
 import API from "../utils/API";
 
 // React.Component{}
