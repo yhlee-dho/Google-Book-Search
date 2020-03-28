@@ -9,15 +9,17 @@ class Saved extends Component {
 
     componentDidMount() {
         API.savedBooks()
-            .then(savedBookds => this.setState({ savedBooks: savedBooks }))
+            .then(savedBooks => this.setState({ savedBooks: savedBooks }))
             .catch(err => console.log(err));
     }
 
     render() {
-        <div className="container">
-            <h2>Saved Books</h2>
-            <Results book={this.state.savedBooks} />
-        </div>
+        return (
+            <div className="container">
+                <h2>Saved Books</h2>
+                <Results book={this.state.savedBooks} />
+            </div>
+        )
     }
 }
 
