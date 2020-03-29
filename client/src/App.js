@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Wrapper from "./components/Wrapper";
 
 import NoMatch from "./pages/NoMatch";
-import Search from "./pages/Search";
+import Search from "./pages/paulSearch";
 import Saved from "./pages/Saved";
 
 import "./App.css";
