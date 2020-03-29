@@ -39,7 +39,7 @@ class Search extends React.Component {
   };
 
   // handleInputChange
-  handleInputSubmit = event => {
+  handleInputChange = event => {
     const name = event.target.name;
     const value = event.target.value;
     this.setState({
@@ -54,14 +54,20 @@ class Search extends React.Component {
   };
 
   render() {
+    console.log(this.state.books);
     return (
       <div>
         <Form
           search={this.state.search}
           handleInputChange={this.handleInputChange}
-          handleFormSubmit={this.state.books} />
+          handleFormSubmit={this.handleFormSubmit} />
         <div className="container">
           <h2>Results</h2>
+          {/* {this.state.books.length ? (
+          <Results books={this.state.books} />
+          ) : (
+            null
+          )} */}
           <Results books={this.state.books} />
         </div>
       </div>

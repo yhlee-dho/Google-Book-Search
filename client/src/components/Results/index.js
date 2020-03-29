@@ -3,7 +3,7 @@ import API from "../../utils/API";
 
 class Results extends Component {
     state = {
-        savedBooks: []
+        savedBooks: [],
     }
 
     componentDidMount() {
@@ -16,9 +16,10 @@ class Results extends Component {
         if(this.state.savedBooks.map(book => book._id).includes(book._id)) {
             API.deleteBook(book._id)
                 .then(deletedBook => this.setState({ savedBooks: this.state.savedBooks.filter(book => book._id !== deletedBook._id) }))
+                .catch(err => console.log(err));
         } else {
             API.saveBook(book)
-                .then(savedBook => this.setState({ savedBooks: this.state.savedBooks.concat([savedBook])}))
+                .then(savedBook => this.setState({ savedBooks: this.state.savedBooks.concat([savedBook]) }))
                 .catch(err => console.log(err));
         }
     }
@@ -47,9 +48,9 @@ class Results extends Component {
                                                     href={res.link} 
                                                     target="_blank"
                                                     rel="noopener noreferrer">View</a>
-                                                <button onClick={() => this.handleSave(res)} 
-                                                        className="btn badge-pill btn-outline-warning mt-3 ml-3">
-                                                    {this.state.savedBooks.map(book => book._id).includes(res._id) ? "unknown" : "Save"}
+                                                <button className="btn badge-pill btn-outline-warning mt-3 ml-3"
+                                                        onClick={() => this.handleSave(res)} >
+                                                    {this.state.savedBooks.map(book => book._id).includes(res._id) ? "Remove" : "Save"}
                                                 </button>
                                             </div>
                                         </div>
