@@ -63,12 +63,12 @@ class Search extends React.Component {
           handleFormSubmit={this.handleFormSubmit} />
         <div className="container">
           <h2>Results</h2>
-          {/* {this.state.books.length ? (
+          {this.state.books.length ? (
           <Results books={this.state.books} />
           ) : (
             null
-          )} */}
-          <Results books={this.state.books} />
+          )}
+          {/* <Results books={this.state.books} /> */}
         </div>
       </div>
     )
