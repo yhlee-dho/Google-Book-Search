@@ -1,5 +1,5 @@
 # Google-Book-Search
-This is a MERN app made with React.
+This is a MERN app.
 This app searches for books on google book search api and lists them for user to view detailed information.
 
 # Additional work
